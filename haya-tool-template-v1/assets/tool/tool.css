@@ -1,0 +1,15 @@
+/* ==========================================
+   ツール固有のCSS
+   ※クラス名には衝突を避けるため接頭辞(.tool-xxxなど)を使用してください
+========================================== */
+
+/* 例: 入力エリアと結果エリアの余白調整用 
+.tool-input-area {
+    margin-bottom: 30px;
+}
+.tool-result-box {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--border-color);
+}
+*/

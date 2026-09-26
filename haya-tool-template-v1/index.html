@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- [SEO: CHANGE REQUIRED] -->
+    <title>[SEO TITLE]</title>
+    <meta name="description" content="[SEO DESCRIPTION]">
+    <link rel="canonical" href="https://example.com/">
+    
+    <!-- [OGP: CHANGE REQUIRED] -->
+    <meta property="og:title" content="[SEO TITLE]">
+    <meta property="og:description" content="[SEO DESCRIPTION]">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="assets/common/common.css">
+    <link rel="stylesheet" href="assets/tool/tool.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" data-config="SITE_NAME"></a>
+            <p class="header-subtitle">[TOOL SUBTITLE / SHORT DESCRIPTION]</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 広告プレースホルダー (不要なら削除) -->
+        <!-- <div class="ad-space">広告スペース</div> -->
+
+        <section class="hero">
+            <!-- [HERO CONTENT: CHANGE REQUIRED] -->
+            <h2>[HERO CATCHPHRASE]</h2>
+            <p>[HERO EXPLANATION TEXT]</p>
+            <div class="disclaimer">
+                ※[DISCLAIMER TEXT]
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <!-- [TOOL AREA: CHANGE REQUIRED] -->
+            <h2>[TOOL SECTION TITLE]</h2>
+            <p>[TOOL USAGE INSTRUCTIONS]</p>
+            
+            <!-- ツール入力UI (ツール固有のIDやクラスを付与してください) -->
+            <div class="form-group tool-input-area">
+                <label for="tool-input" class="visually-hidden">入力エリア</label>
+                <textarea id="tool-input" rows="5" placeholder="[INPUT PLACEHOLDER]"></textarea>
+            </div>
+            <button id="tool-execute-btn" class="btn btn-primary" type="button">[EXECUTE BUTTON TEXT]</button>
+
+            <!-- ツール結果表示UI (初期状態は hidden とする運用を推奨) -->
+            <div id="tool-result-area" class="tool-result-box hidden" aria-live="polite">
+                <h3>[RESULT TITLE]</h3>
+                <p>[RESULT CONTENT PLACEHOLDER]</p>
+            </div>
+        </section>
+
+        <section class="premium-section" id="premium">
+            <!-- [PREMIUM CONTENT: CHANGE REQUIRED] -->
+            <h2>【有料サービス】[PREMIUM SERVICE NAME]</h2>
+            <div class="premium-card">
+                <div class="premium-price">価格: <span data-config="PREMIUM_PRICE"></span>円<span>（税込 / 買い切り）</span></div>
+                <p>[PREMIUM SERVICE DESCRIPTION]</p>
+                <ul class="premium-features">
+                    <li>[FEATURE 1]</li>
+                    <li>[FEATURE 2]</li>
+                    <li>[FEATURE 3]</li>
+                </ul>
+                <div class="action-area">
+                    <a href="#" id="common-premium-btn" target="_blank" rel="noopener noreferrer" class="btn btn-accent">[PREMIUM BUTTON TEXT]</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <!-- [FAQ CONTENT: CHANGE REQUIRED] -->
+            <h2>よくあるご質問 (FAQ)</h2>
+            <dl class="faq-list">
+                <dt>Q. [FAQ QUESTION 1]</dt>
+                <dd>A. [FAQ ANSWER 1]</dd>
+                
+                <dt>Q. [FAQ QUESTION 2]</dt>
+                <dd>A. [FAQ ANSWER 2]</dd>
+            </dl>
+        </section>
+
+        <section class="request-section">
+            <h2>こんな機能・ツールがほしい？</h2>
+            <p>こんな機能があったら便利、こんなツールを作ってほしい、などのアイデアを送れます。今後の改善や新しいツール開発の参考にします。</p>
+            <div class="action-area">
+                <button id="common-request-btn" class="btn btn-secondary" type="button">機能・ツールをリクエストする</button>
+            </div>
+        </section>
+        
+        <!-- 広告プレースホルダー -->
+        <!-- <div class="ad-space">広告スペース</div> -->
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="commerce-disclosure.html">特定商取引法に基づく表記</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <p class="copyright">&copy; <span data-config="COPYRIGHT_YEAR"></span> <span data-config="BRAND_NAME"></span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- スクリプト読み込み -->
+    <script src="config.js"></script>
+    <script src="assets/common/common.js"></script>
+    <script src="assets/tool/tool.js"></script>
+</body>
+</html>

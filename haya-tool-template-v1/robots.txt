@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /commerce-disclosure.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /contact.html
+
+# [SEO: CHANGE REQUIRED] サイトのドメインに変更してください
+Sitemap: https://example.com/sitemap.xml
