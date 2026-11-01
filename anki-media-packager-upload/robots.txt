@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /commerce-disclosure.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /contact.html
+
+# Placeholder URL
+Sitemap: https://example.com/sitemap.xml

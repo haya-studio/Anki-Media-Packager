@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Anki Media Packager | Browser-based Deck Generator</title>
+    <meta name="description" content="Create an Anki deck from your CSV, images, and audio files entirely in your browser. No server uploads.">
+    <!-- Placeholder URL -->
+    <link rel="canonical" href="https://example.com/">
+    
+    <meta property="og:title" content="Anki Media Packager">
+    <meta property="og:description" content="Create an Anki deck from your CSV, images, and audio files entirely in your browser.">
+    <!-- Placeholder URL -->
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="assets/common/common.css">
+    <link rel="stylesheet" href="assets/tool/tool.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/krmanik/genanki-js/dist/genanki.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" data-config="SITE_NAME"></a>
+            <p class="header-subtitle">Browser-based Anki Deck Generator</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Create Decks Instantly</h2>
+            <p>Create an Anki deck from your CSV, images, and audio files.</p>
+            
+            <div class="info-box">
+                <strong>Privacy first:</strong> Your files are processed locally in your browser and are not uploaded to our server.<br><br>
+                <strong>How it works:</strong> Files are matched by filename (case-insensitive).<br>
+                For example, a CSV row starting with <code>apple</code> will automatically match <code>apple.jpg</code> and <code>apple.mp3</code>.
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="form-group">
+                <label for="csvFile">1. Choose CSV (Column 1 = Front, Column 2 = Back)</label>
+                <input type="file" id="csvFile" accept=".csv">
+            </div>
+
+            <div class="form-group">
+                <label for="imgFiles">2. Choose Images (Multiple)</label>
+                <input type="file" id="imgFiles" accept="image/*" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="audioFiles">3. Choose Audio (Multiple)</label>
+                <input type="file" id="audioFiles" accept="audio/*" multiple>
+            </div>
+
+            <button id="matchBtn" class="btn btn-primary" disabled>Initializing Engine...</button>
+            <div id="status"></div>
+        </section>
+
+        <section id="resultsSection">
+            <h2>Match Results</h2>
+            <div class="table-responsive">
+                <table id="matchTable">
+                    <thead>
+                        <tr>
+                            <th>Front (CSV)</th>
+                            <th>Image</th>
+                            <th>Audio</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matchTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <button id="generateBtn" class="btn btn-primary">Generate APKG</button>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <dl class="faq-list">
+                <dt>Q. Are my files uploaded to any server?</dt>
+                <dd>A. No. Your files are processed locally in your browser and are not uploaded to our server.</dd>
+                
+                <dt>Q. What if I have multiple files with the same name?</dt>
+                <dd>A. The tool will flag them as 'Duplicate' and prevent generation to avoid linking errors. Please rename duplicates to ensure 1-to-1 matching.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <p class="copyright">&copy; <span data-config="COPYRIGHT_YEAR"></span> <span data-config="BRAND_NAME"></span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="assets/common/common.js"></script>
+    <script src="assets/tool/tool.js"></script>
+</body>
+</html>
